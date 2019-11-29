@@ -1,0 +1,12 @@
+{
+  "name": "mall",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/myjone/mall.git",
+  "author": "zhangjie <zhangjie@yunfucloud.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.11.0",
+    "mongoose": "^5.7.12"
+  }
+}
