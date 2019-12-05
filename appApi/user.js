@@ -12,7 +12,6 @@ router.get('/register',async(ctx)=>{
 
 router.post('/auth',async(ctx)=>{
     console.log(ctx.request.body)
-
     ctx.body = {
         code: 0,
         message: '请求成功',
