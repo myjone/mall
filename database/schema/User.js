@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 let ObjectId = Schema.Types.ObjectId
-
 const bcrypt = require('bcryptjs')
 const SALT_WORK_FACTOR = 10
 //创建UserSchema
@@ -25,7 +24,6 @@ userSchema.pre('save', function (next) {
                 this.password = hash
                 next()
             }
-
         })
     })
 })
