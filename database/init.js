@@ -1,7 +1,16 @@
 const mongoose = require('mongoose')
 const db = 'mongodb://111.229.37.126/mall-db'
+const glob = require('glob')
+const { resolve } = require('path')
+
+exports.initSchemas =()=>{
+    //引入所有的schema
+    glob.sync(resolve(__dirname,'./schema','**/*.js')).forEach(require)
+}
+
 exports.connect = ()=>{
     //链接数据库
+    mongoose.set('useCreateIndex', true)
     mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
     let maxConnectTimes =0;
     return new Promise((resolve,reject)=>{

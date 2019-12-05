@@ -6,6 +6,8 @@
   "author": "zhangjie <zhangjie@yunfucloud.com>",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "glob": "^7.1.6",
     "koa": "^2.11.0",
     "mongoose": "^5.7.12"
   }
