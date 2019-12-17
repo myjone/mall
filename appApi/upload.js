@@ -4,6 +4,7 @@
  * **/
 const Router = require('koa-router')
 const qiniu = require('qiniu')
+// const tentConfig = require("../config/tentConfig")
 let qiniuConfig = require('../config/qiniuConfig.js')
 let router = new Router()
 const getToken = () => {
@@ -25,6 +26,7 @@ const getToken = () => {
     })
 }
 router.post('/token', async (ctx) => {
+    console.log(ctx)
     let uploadToken = await getToken();
     ctx.body = {
         code: 0,
@@ -32,5 +34,16 @@ router.post('/token', async (ctx) => {
         data: uploadToken,
     }
 })
+
+// router.post('/tentToken', async(ctx)=>{
+//     console.log(ctx)
+//     let data = await tentConfig.getOssKey
+//     console.log(data)
+//     ctx.body = {
+//         code: 0,
+//         message: '请求成功',
+//         data: uploadToken,
+//     }
+// })
 
 module.exports = router;
